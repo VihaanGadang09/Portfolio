@@ -230,7 +230,9 @@ $(document).on('ready', function() {
     /*=========================================================================
                 Slick Slider
     =========================================================================*/
-    $('.testimonials-wrapper').slick({
+    // index.html was saved after the slider had already been built,
+    // so only set it up if it isn't set up yet (avoids a crash).
+    $('.testimonials-wrapper').not('.slick-initialized').slick({
       dots: true,
       arrows: false,
       autoplay: true,
